@@ -25,22 +25,22 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "delevery web system/app/",
-            "Database\\Factories\\": "delevery web system/database/factories/",
-            "Database\\Seeders\\": "delevery web system/database/seeders/"
+            "App\\": "delivery-web-system/app/",
+            "Database\\Factories\\": "delivery-web-system/database/factories/",
+            "Database\\Seeders\\": "delivery-web-system/database/seeders/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "delevery web system/tests/"
+            "Tests\\": "delivery-web-system/tests/"
         }
     },
     "scripts": {
         "setup": [
             "composer install",
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
-            "@php \"delevery web system/artisan\" key:generate",
-            "@php \"delevery web system/artisan\" migrate --force",
+            "@php \"delivery-web-system/artisan\" key:generate",
+            "@php \"delivery-web-system/artisan\" migrate --force",
             "npm install",
             "npm run build"
         ],
@@ -49,24 +49,24 @@
             "npx concurrently -c \"#93c5fd,#c4b5fd,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"npm run dev\" --names='server,queue,vite'"
         ],
         "test": [
-            "@php \"delevery web system/artisan\" config:clear --ansi",
-            "@php \"delevery web system/artisan\" test"
+            "@php \"delivery-web-system/artisan\" config:clear --ansi",
+            "@php \"delivery-web-system/artisan\" test"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php \"delevery web system/artisan\" package:discover --ansi"
+            "@php \"delivery-web-system/artisan\" package:discover --ansi"
         ],
         "post-update-cmd": [
-            "@php \"delevery web system/artisan\" vendor:publish --tag=laravel-assets --ansi --force",
-            "@php \"delevery web system/artisan\" boost:update --ansi"
+            "@php \"delivery-web-system/artisan\" vendor:publish --tag=laravel-assets --ansi --force",
+            "@php \"delivery-web-system/artisan\" boost:update --ansi"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
-            "@php \"delevery web system/artisan\" key:generate --ansi",
+            "@php \"delivery-web-system/artisan\" key:generate --ansi",
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
-            "@php \"delevery web system/artisan\" migrate --graceful --ansi"
+            "@php \"delivery-web-system/artisan\" migrate --graceful --ansi"
         ],
         "pre-package-uninstall": [
             "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
@@ -78,7 +78,7 @@
         }
     },
     "config": {
-        "vendor-dir": "delevery web system/vendor",
+        "vendor-dir": "delivery-web-system/vendor",
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true,
