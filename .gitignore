@@ -1,0 +1,13 @@
+/vendor
+/delivery-web-system/vendor
+/delivery-web-system/node_modules
+/delivery-web-system/public/build
+/delivery-web-system/public/hot
+/delivery-web-system/public/storage
+/delivery-web-system/storage/*.key
+/delivery-web-system/storage/pail
+.env
+*.log
+.DS_Store
+.vercel
+/hey
